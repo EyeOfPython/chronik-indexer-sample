@@ -15,8 +15,8 @@ async def main():
     )
     tx = Tx()
     tx.ParseFromString(response.content)
-    print(response.request.url, "returned:")
-    print(tx)
+    print('fetched', response.request.url)
+    print('tx block hash:', tx.block.hash[::-1].hex())
 
     # We get the tx history by calling /script/:script_type/:payload
     # As a result, we get a TxHistoryPage.
@@ -27,8 +27,8 @@ async def main():
     )
     history = TxHistoryPage()
     history.ParseFromString(response.content)
-    print(response.request.url, "returned:")
-    print(history)
+    print('fetched', response.request.url)
+    print('num tx on page', len(history.txs))
 
     # Some scripts can have extremely large pages, so we can specify the page.
     # We can also set the page_size if we want a different number of txs per page.
@@ -37,8 +37,8 @@ async def main():
     )
     history = TxHistoryPage()
     history.ParseFromString(response.content)
-    print(response.request.url, "returned:")
-    print(history)
+    print('fetched', response.request.url)
+    print('num tx on page', len(history.txs))
 
     # We get the UTXOs of a script by calling /script/:script_type/:payload/utxos
     # This gives us all the UTXOs of the script.
@@ -47,14 +47,15 @@ async def main():
     )
     utxos = Utxos()
     utxos.ParseFromString(response.content)
-    print(response.request.url, "returned:")
-    print(utxos)
+    print('fetched', response.request.url)
+    print('num of scripts:', len(utxos.script_utxos))
+    print('num of utxos:', len(utxos.script_utxos[0].utxos))
 
     # We can also validate a list of UTXOs by calling /validate-utxos.
     # It expects a list of outpoints and returns whether the output is
     # spent, unspent, or whether the tx/output never existed.
     request = ValidateUtxoRequest()
-    request.outpoints.append(utxos.utxos[0].outpoint)
+    request.outpoints.append(utxos.script_utxos[0].utxos[0].outpoint)
     request.outpoints.append(tx.inputs[0].prev_out)
     request.outpoints.append(OutPoint(txid=bytes(32)))
     request_proto = request.SerializeToString()
@@ -85,6 +86,7 @@ async def main():
         is_subscribe=True,
     )
     await ws.send(msg.SerializeToString())
+    print('Waiting for txs or confirmations on', msg.payload.hex(), '...')
     while True:
         # We then wait for new txs to that script.
         # Since the address is in the payout, we get a Confirmed message
