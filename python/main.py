@@ -5,9 +5,39 @@ import websockets
 
 from chronik_pb2 import Tx, TxHistoryPage, Utxos, ValidateUtxoRequest, ValidateUtxoResponse, Error, OutPoint, \
     Subscription, SubscribeMsg
+from python.chronik_pb2 import Block, Blocks
 
 
 async def main():
+    # We can get a single block like this:
+    response = requests.get(
+        "https://chronik.be.cash/xpi/block/0000000000124d5456d0c9946ad1bac56d481aa3657b4a160157b5102038e380"
+    )
+    block = Block()
+    block.ParseFromString(response.content)
+    print('fetched', response.request.url)
+    print('block timestamp:', block.block_info.timestamp)
+    print('block num txs:', len(block.txs))
+
+    # We can get a single block like this:
+    response = requests.get(
+        "https://chronik.be.cash/xpi/block/129113"
+    )
+    block = Block()
+    block.ParseFromString(response.content)
+    print('fetched', response.request.url)
+    print('block timestamp:', block.block_info.timestamp)
+    print('block num txs:', len(block.txs))
+
+    # Block info for a range of blocks:
+    response = requests.get(
+        "https://chronik.be.cash/xpi/blocks/0/100"
+    )
+    blocks = Blocks()
+    blocks.ParseFromString(response.content)
+    print('fetched', response.request.url)
+    print('num blocks fetched:', len(blocks.blocks))
+
     # Getting a single tx is very simple.
     # We just call /tx/:txid, and parse the result as Tx message.
     response = requests.get(

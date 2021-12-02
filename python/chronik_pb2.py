@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rchronik.proto\x12\x07\x63hronik\";\n\x13ValidateUtxoRequest\x12$\n\toutpoints\x18\x01 \x03(\x0b\x32\x11.chronik.OutPoint\"?\n\x14ValidateUtxoResponse\x12\'\n\x0butxo_states\x18\x01 \x03(\x0b\x32\x12.chronik.UtxoState\"\x9f\x02\n\x02Tx\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\x12\x0f\n\x07version\x18\x02 \x01(\x05\x12 \n\x06inputs\x18\x03 \x03(\x0b\x32\x10.chronik.TxInput\x12\"\n\x07outputs\x18\x04 \x03(\x0b\x32\x11.chronik.TxOutput\x12\x11\n\tlock_time\x18\x05 \x01(\r\x12\'\n\x0bslp_tx_data\x18\x06 \x01(\x0b\x32\x12.chronik.SlpTxData\x12\x15\n\rslp_error_msg\x18\x07 \x01(\t\x12%\n\x05\x62lock\x18\x08 \x01(\x0b\x32\x16.chronik.BlockMetadata\x12\x17\n\x0ftime_first_seen\x18\t \x01(\x03\x12!\n\x07network\x18\n \x01(\x0e\x32\x10.chronik.Network\"\xd2\x01\n\x04Utxo\x12#\n\x08outpoint\x18\x01 \x01(\x0b\x32\x11.chronik.OutPoint\x12\x14\n\x0c\x62lock_height\x18\x02 \x01(\x05\x12\x13\n\x0bis_coinbase\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x05 \x01(\x03\x12\"\n\x08slp_meta\x18\x06 \x01(\x0b\x32\x10.chronik.SlpMeta\x12$\n\tslp_token\x18\x07 \x01(\x0b\x32\x11.chronik.SlpToken\x12!\n\x07network\x18\t \x01(\x0e\x32\x10.chronik.Network\"B\n\x0bScriptUtxos\x12\x15\n\routput_script\x18\x01 \x01(\x0c\x12\x1c\n\x05utxos\x18\x02 \x03(\x0b\x32\r.chronik.Utxo\"<\n\rTxHistoryPage\x12\x18\n\x03txs\x18\x01 \x03(\x0b\x32\x0b.chronik.Tx\x12\x11\n\tnum_pages\x18\x02 \x01(\r\"3\n\x05Utxos\x12*\n\x0cscript_utxos\x18\x01 \x03(\x0b\x32\x14.chronik.ScriptUtxos\"^\n\tSlpTxData\x12\"\n\x08slp_meta\x18\x01 \x01(\x0b\x32\x10.chronik.SlpMeta\x12-\n\x0cgenesis_info\x18\x02 \x01(\x0b\x32\x17.chronik.SlpGenesisInfo\"\x83\x01\n\x07SlpMeta\x12)\n\ntoken_type\x18\x01 \x01(\x0e\x32\x15.chronik.SlpTokenType\x12#\n\x07tx_type\x18\x02 \x01(\x0e\x32\x12.chronik.SlpTxType\x12\x10\n\x08token_id\x18\x03 \x01(\x0c\x12\x16\n\x0egroup_token_id\x18\x04 \x01(\x0c\"\xc9\x01\n\x07TxInput\x12#\n\x08prev_out\x18\x01 \x01(\x0b\x32\x11.chronik.OutPoint\x12\x14\n\x0cinput_script\x18\x02 \x01(\x0c\x12\x15\n\routput_script\x18\x03 \x01(\x0c\x12\r\n\x05value\x18\x04 \x01(\x03\x12\x13\n\x0bsequence_no\x18\x05 \x01(\r\x12\"\n\x08slp_burn\x18\x06 \x01(\x0b\x32\x10.chronik.SlpBurn\x12$\n\tslp_token\x18\x07 \x01(\x0b\x32\x11.chronik.SlpToken\"{\n\x08TxOutput\x12\r\n\x05value\x18\x01 \x01(\x03\x12\x15\n\routput_script\x18\x02 \x01(\x0c\x12$\n\tslp_token\x18\x03 \x01(\x0b\x32\x11.chronik.SlpToken\x12#\n\x08spent_by\x18\x04 \x01(\x0b\x32\x11.chronik.OutPoint\"@\n\rBlockMetadata\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\")\n\x08OutPoint\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\x12\x0f\n\x07out_idx\x18\x02 \x01(\r\"1\n\x08SlpToken\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x04\x12\x15\n\ris_mint_baton\x18\x02 \x01(\x08\"=\n\x07SlpBurn\x12 \n\x05token\x18\x01 \x01(\x0b\x32\x11.chronik.SlpToken\x12\x10\n\x08token_id\x18\x02 \x01(\x0c\"\x85\x01\n\x0eSlpGenesisInfo\x12\x14\n\x0ctoken_ticker\x18\x01 \x01(\x0c\x12\x12\n\ntoken_name\x18\x02 \x01(\x0c\x12\x1a\n\x12token_document_url\x18\x03 \x01(\x0c\x12\x1b\n\x13token_document_hash\x18\x04 \x01(\x0c\x12\x10\n\x08\x64\x65\x63imals\x18\x05 \x01(\r\"[\n\tUtxoState\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\x14\n\x0cis_confirmed\x18\x02 \x01(\x08\x12(\n\x05state\x18\x03 \x01(\x0e\x32\x19.chronik.UtxoStateVariant\"J\n\x0cSubscription\x12\x13\n\x0bscript_type\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\x12\x14\n\x0cis_subscribe\x18\x03 \x01(\x08\"\xff\x01\n\x0cSubscribeMsg\x12\x1f\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x0e.chronik.ErrorH\x00\x12\x34\n\x0e\x41\x64\x64\x65\x64ToMempool\x18\x02 \x01(\x0b\x32\x1a.chronik.MsgAddedToMempoolH\x00\x12<\n\x12RemovedFromMempool\x18\x03 \x01(\x0b\x32\x1e.chronik.MsgRemovedFromMempoolH\x00\x12*\n\tConfirmed\x18\x04 \x01(\x0b\x32\x15.chronik.MsgConfirmedH\x00\x12\"\n\x05Reorg\x18\x05 \x01(\x0b\x32\x11.chronik.MsgReorgH\x00\x42\n\n\x08msg_type\"!\n\x11MsgAddedToMempool\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"%\n\x15MsgRemovedFromMempool\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"\x1c\n\x0cMsgConfirmed\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"\x18\n\x08MsgReorg\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"?\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x15\n\ris_user_error\x18\x03 \x01(\x08*T\n\x0cSlpTokenType\x12\x0c\n\x08\x46UNGIBLE\x10\x00\x12\x0e\n\nNFT1_GROUP\x10\x01\x12\x0e\n\nNFT1_CHILD\x10\x02\x12\x16\n\x12UNKNOWN_TOKEN_TYPE\x10\x03*A\n\tSlpTxType\x12\x0b\n\x07GENESIS\x10\x00\x12\x08\n\x04SEND\x10\x01\x12\x08\n\x04MINT\x10\x02\x12\x13\n\x0fUNKNOWN_TX_TYPE\x10\x03*-\n\x07Network\x12\x07\n\x03\x42\x43H\x10\x00\x12\x07\n\x03XEC\x10\x01\x12\x07\n\x03XPI\x10\x02\x12\x07\n\x03XRG\x10\x03*N\n\x10UtxoStateVariant\x12\x0b\n\x07UNSPENT\x10\x00\x12\t\n\x05SPENT\x10\x01\x12\x0e\n\nNO_SUCH_TX\x10\x02\x12\x12\n\x0eNO_SUCH_OUTPUT\x10\x03\x62\x06proto3'
+  serialized_pb=b'\n\rchronik.proto\x12\x07\x63hronik\";\n\x13ValidateUtxoRequest\x12$\n\toutpoints\x18\x01 \x03(\x0b\x32\x11.chronik.OutPoint\"?\n\x14ValidateUtxoResponse\x12\'\n\x0butxo_states\x18\x01 \x03(\x0b\x32\x12.chronik.UtxoState\"\x9f\x02\n\x02Tx\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\x12\x0f\n\x07version\x18\x02 \x01(\x05\x12 \n\x06inputs\x18\x03 \x03(\x0b\x32\x10.chronik.TxInput\x12\"\n\x07outputs\x18\x04 \x03(\x0b\x32\x11.chronik.TxOutput\x12\x11\n\tlock_time\x18\x05 \x01(\r\x12\'\n\x0bslp_tx_data\x18\x06 \x01(\x0b\x32\x12.chronik.SlpTxData\x12\x15\n\rslp_error_msg\x18\x07 \x01(\t\x12%\n\x05\x62lock\x18\x08 \x01(\x0b\x32\x16.chronik.BlockMetadata\x12\x17\n\x0ftime_first_seen\x18\t \x01(\x03\x12!\n\x07network\x18\n \x01(\x0e\x32\x10.chronik.Network\"\xd2\x01\n\x04Utxo\x12#\n\x08outpoint\x18\x01 \x01(\x0b\x32\x11.chronik.OutPoint\x12\x14\n\x0c\x62lock_height\x18\x02 \x01(\x05\x12\x13\n\x0bis_coinbase\x18\x03 \x01(\x08\x12\r\n\x05value\x18\x05 \x01(\x03\x12\"\n\x08slp_meta\x18\x06 \x01(\x0b\x32\x10.chronik.SlpMeta\x12$\n\tslp_token\x18\x07 \x01(\x0b\x32\x11.chronik.SlpToken\x12!\n\x07network\x18\t \x01(\x0e\x32\x10.chronik.Network\"\xa0\x02\n\tBlockInfo\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\x12\x11\n\tprev_hash\x18\x02 \x01(\x0c\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\x0e\n\x06n_bits\x18\x04 \x01(\r\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12\x12\n\nblock_size\x18\x06 \x01(\x04\x12\x0f\n\x07num_txs\x18\x07 \x01(\x04\x12\x12\n\nnum_inputs\x18\x08 \x01(\x04\x12\x13\n\x0bnum_outputs\x18\t \x01(\x04\x12\x16\n\x0esum_input_sats\x18\n \x01(\x03\x12 \n\x18sum_coinbase_output_sats\x18\x0b \x01(\x03\x12\x1e\n\x16sum_normal_output_sats\x18\x0c \x01(\x03\x12\x17\n\x0fsum_burned_sats\x18\r \x01(\x03\"I\n\x05\x42lock\x12&\n\nblock_info\x18\x01 \x01(\x0b\x32\x12.chronik.BlockInfo\x12\x18\n\x03txs\x18\x02 \x03(\x0b\x32\x0b.chronik.Tx\"B\n\x0bScriptUtxos\x12\x15\n\routput_script\x18\x01 \x01(\x0c\x12\x1c\n\x05utxos\x18\x02 \x03(\x0b\x32\r.chronik.Utxo\"<\n\rTxHistoryPage\x12\x18\n\x03txs\x18\x01 \x03(\x0b\x32\x0b.chronik.Tx\x12\x11\n\tnum_pages\x18\x02 \x01(\r\"3\n\x05Utxos\x12*\n\x0cscript_utxos\x18\x01 \x03(\x0b\x32\x14.chronik.ScriptUtxos\",\n\x06\x42locks\x12\"\n\x06\x62locks\x18\x01 \x03(\x0b\x32\x12.chronik.BlockInfo\"^\n\tSlpTxData\x12\"\n\x08slp_meta\x18\x01 \x01(\x0b\x32\x10.chronik.SlpMeta\x12-\n\x0cgenesis_info\x18\x02 \x01(\x0b\x32\x17.chronik.SlpGenesisInfo\"\x83\x01\n\x07SlpMeta\x12)\n\ntoken_type\x18\x01 \x01(\x0e\x32\x15.chronik.SlpTokenType\x12#\n\x07tx_type\x18\x02 \x01(\x0e\x32\x12.chronik.SlpTxType\x12\x10\n\x08token_id\x18\x03 \x01(\x0c\x12\x16\n\x0egroup_token_id\x18\x04 \x01(\x0c\"\xc9\x01\n\x07TxInput\x12#\n\x08prev_out\x18\x01 \x01(\x0b\x32\x11.chronik.OutPoint\x12\x14\n\x0cinput_script\x18\x02 \x01(\x0c\x12\x15\n\routput_script\x18\x03 \x01(\x0c\x12\r\n\x05value\x18\x04 \x01(\x03\x12\x13\n\x0bsequence_no\x18\x05 \x01(\r\x12\"\n\x08slp_burn\x18\x06 \x01(\x0b\x32\x10.chronik.SlpBurn\x12$\n\tslp_token\x18\x07 \x01(\x0b\x32\x11.chronik.SlpToken\"{\n\x08TxOutput\x12\r\n\x05value\x18\x01 \x01(\x03\x12\x15\n\routput_script\x18\x02 \x01(\x0c\x12$\n\tslp_token\x18\x03 \x01(\x0b\x32\x11.chronik.SlpToken\x12#\n\x08spent_by\x18\x04 \x01(\x0b\x32\x11.chronik.OutPoint\"@\n\rBlockMetadata\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\x0c\n\x04hash\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\")\n\x08OutPoint\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\x12\x0f\n\x07out_idx\x18\x02 \x01(\r\"1\n\x08SlpToken\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x04\x12\x15\n\ris_mint_baton\x18\x02 \x01(\x08\"=\n\x07SlpBurn\x12 \n\x05token\x18\x01 \x01(\x0b\x32\x11.chronik.SlpToken\x12\x10\n\x08token_id\x18\x02 \x01(\x0c\"\x85\x01\n\x0eSlpGenesisInfo\x12\x14\n\x0ctoken_ticker\x18\x01 \x01(\x0c\x12\x12\n\ntoken_name\x18\x02 \x01(\x0c\x12\x1a\n\x12token_document_url\x18\x03 \x01(\x0c\x12\x1b\n\x13token_document_hash\x18\x04 \x01(\x0c\x12\x10\n\x08\x64\x65\x63imals\x18\x05 \x01(\r\"[\n\tUtxoState\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\x14\n\x0cis_confirmed\x18\x02 \x01(\x08\x12(\n\x05state\x18\x03 \x01(\x0e\x32\x19.chronik.UtxoStateVariant\"J\n\x0cSubscription\x12\x13\n\x0bscript_type\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\x12\x14\n\x0cis_subscribe\x18\x03 \x01(\x08\"\xff\x01\n\x0cSubscribeMsg\x12\x1f\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x0e.chronik.ErrorH\x00\x12\x34\n\x0e\x41\x64\x64\x65\x64ToMempool\x18\x02 \x01(\x0b\x32\x1a.chronik.MsgAddedToMempoolH\x00\x12<\n\x12RemovedFromMempool\x18\x03 \x01(\x0b\x32\x1e.chronik.MsgRemovedFromMempoolH\x00\x12*\n\tConfirmed\x18\x04 \x01(\x0b\x32\x15.chronik.MsgConfirmedH\x00\x12\"\n\x05Reorg\x18\x05 \x01(\x0b\x32\x11.chronik.MsgReorgH\x00\x42\n\n\x08msg_type\"!\n\x11MsgAddedToMempool\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"%\n\x15MsgRemovedFromMempool\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"\x1c\n\x0cMsgConfirmed\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"\x18\n\x08MsgReorg\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\"?\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x15\n\ris_user_error\x18\x03 \x01(\x08*T\n\x0cSlpTokenType\x12\x0c\n\x08\x46UNGIBLE\x10\x00\x12\x0e\n\nNFT1_GROUP\x10\x01\x12\x0e\n\nNFT1_CHILD\x10\x02\x12\x16\n\x12UNKNOWN_TOKEN_TYPE\x10\x03*A\n\tSlpTxType\x12\x0b\n\x07GENESIS\x10\x00\x12\x08\n\x04SEND\x10\x01\x12\x08\n\x04MINT\x10\x02\x12\x13\n\x0fUNKNOWN_TX_TYPE\x10\x03*-\n\x07Network\x12\x07\n\x03\x42\x43H\x10\x00\x12\x07\n\x03XEC\x10\x01\x12\x07\n\x03XPI\x10\x02\x12\x07\n\x03XRG\x10\x03*N\n\x10UtxoStateVariant\x12\x0b\n\x07UNSPENT\x10\x00\x12\t\n\x05SPENT\x10\x01\x12\x0e\n\nNO_SUCH_TX\x10\x02\x12\x12\n\x0eNO_SUCH_OUTPUT\x10\x03\x62\x06proto3'
 )
 
 _SLPTOKENTYPE = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _SLPTOKENTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2378,
-  serialized_end=2462,
+  serialized_start=2790,
+  serialized_end=2874,
 )
 _sym_db.RegisterEnumDescriptor(_SLPTOKENTYPE)
 
@@ -89,8 +89,8 @@ _SLPTXTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2464,
-  serialized_end=2529,
+  serialized_start=2876,
+  serialized_end=2941,
 )
 _sym_db.RegisterEnumDescriptor(_SLPTXTYPE)
 
@@ -125,8 +125,8 @@ _NETWORK = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2531,
-  serialized_end=2576,
+  serialized_start=2943,
+  serialized_end=2988,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORK)
 
@@ -161,8 +161,8 @@ _UTXOSTATEVARIANT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2578,
-  serialized_end=2656,
+  serialized_start=2990,
+  serialized_end=3068,
 )
 _sym_db.RegisterEnumDescriptor(_UTXOSTATEVARIANT)
 
@@ -419,6 +419,161 @@ _UTXO = _descriptor.Descriptor(
 )
 
 
+_BLOCKINFO = _descriptor.Descriptor(
+  name='BlockInfo',
+  full_name='chronik.BlockInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='hash', full_name='chronik.BlockInfo.hash', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='prev_hash', full_name='chronik.BlockInfo.prev_hash', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='height', full_name='chronik.BlockInfo.height', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='n_bits', full_name='chronik.BlockInfo.n_bits', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='chronik.BlockInfo.timestamp', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='block_size', full_name='chronik.BlockInfo.block_size', index=5,
+      number=6, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='num_txs', full_name='chronik.BlockInfo.num_txs', index=6,
+      number=7, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='num_inputs', full_name='chronik.BlockInfo.num_inputs', index=7,
+      number=8, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='num_outputs', full_name='chronik.BlockInfo.num_outputs', index=8,
+      number=9, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sum_input_sats', full_name='chronik.BlockInfo.sum_input_sats', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sum_coinbase_output_sats', full_name='chronik.BlockInfo.sum_coinbase_output_sats', index=10,
+      number=11, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sum_normal_output_sats', full_name='chronik.BlockInfo.sum_normal_output_sats', index=11,
+      number=12, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sum_burned_sats', full_name='chronik.BlockInfo.sum_burned_sats', index=12,
+      number=13, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=656,
+  serialized_end=944,
+)
+
+
+_BLOCK = _descriptor.Descriptor(
+  name='Block',
+  full_name='chronik.Block',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='block_info', full_name='chronik.Block.block_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='txs', full_name='chronik.Block.txs', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=946,
+  serialized_end=1019,
+)
+
+
 _SCRIPTUTXOS = _descriptor.Descriptor(
   name='ScriptUtxos',
   full_name='chronik.ScriptUtxos',
@@ -453,8 +608,8 @@ _SCRIPTUTXOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=655,
-  serialized_end=721,
+  serialized_start=1021,
+  serialized_end=1087,
 )
 
 
@@ -492,8 +647,8 @@ _TXHISTORYPAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=723,
-  serialized_end=783,
+  serialized_start=1089,
+  serialized_end=1149,
 )
 
 
@@ -524,8 +679,40 @@ _UTXOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=785,
-  serialized_end=836,
+  serialized_start=1151,
+  serialized_end=1202,
+)
+
+
+_BLOCKS = _descriptor.Descriptor(
+  name='Blocks',
+  full_name='chronik.Blocks',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='blocks', full_name='chronik.Blocks.blocks', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1204,
+  serialized_end=1248,
 )
 
 
@@ -563,8 +750,8 @@ _SLPTXDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=838,
-  serialized_end=932,
+  serialized_start=1250,
+  serialized_end=1344,
 )
 
 
@@ -616,8 +803,8 @@ _SLPMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=935,
-  serialized_end=1066,
+  serialized_start=1347,
+  serialized_end=1478,
 )
 
 
@@ -690,8 +877,8 @@ _TXINPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1270,
+  serialized_start=1481,
+  serialized_end=1682,
 )
 
 
@@ -743,8 +930,8 @@ _TXOUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1272,
-  serialized_end=1395,
+  serialized_start=1684,
+  serialized_end=1807,
 )
 
 
@@ -789,8 +976,8 @@ _BLOCKMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1397,
-  serialized_end=1461,
+  serialized_start=1809,
+  serialized_end=1873,
 )
 
 
@@ -828,8 +1015,8 @@ _OUTPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1463,
-  serialized_end=1504,
+  serialized_start=1875,
+  serialized_end=1916,
 )
 
 
@@ -867,8 +1054,8 @@ _SLPTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1506,
-  serialized_end=1555,
+  serialized_start=1918,
+  serialized_end=1967,
 )
 
 
@@ -906,8 +1093,8 @@ _SLPBURN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1557,
-  serialized_end=1618,
+  serialized_start=1969,
+  serialized_end=2030,
 )
 
 
@@ -966,8 +1153,8 @@ _SLPGENESISINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1621,
-  serialized_end=1754,
+  serialized_start=2033,
+  serialized_end=2166,
 )
 
 
@@ -1012,8 +1199,8 @@ _UTXOSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1756,
-  serialized_end=1847,
+  serialized_start=2168,
+  serialized_end=2259,
 )
 
 
@@ -1058,8 +1245,8 @@ _SUBSCRIPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1849,
-  serialized_end=1923,
+  serialized_start=2261,
+  serialized_end=2335,
 )
 
 
@@ -1123,8 +1310,8 @@ _SUBSCRIBEMSG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1926,
-  serialized_end=2181,
+  serialized_start=2338,
+  serialized_end=2593,
 )
 
 
@@ -1155,8 +1342,8 @@ _MSGADDEDTOMEMPOOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2183,
-  serialized_end=2216,
+  serialized_start=2595,
+  serialized_end=2628,
 )
 
 
@@ -1187,8 +1374,8 @@ _MSGREMOVEDFROMMEMPOOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2218,
-  serialized_end=2255,
+  serialized_start=2630,
+  serialized_end=2667,
 )
 
 
@@ -1219,8 +1406,8 @@ _MSGCONFIRMED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2257,
-  serialized_end=2285,
+  serialized_start=2669,
+  serialized_end=2697,
 )
 
 
@@ -1251,8 +1438,8 @@ _MSGREORG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2287,
-  serialized_end=2311,
+  serialized_start=2699,
+  serialized_end=2723,
 )
 
 
@@ -1297,8 +1484,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2313,
-  serialized_end=2376,
+  serialized_start=2725,
+  serialized_end=2788,
 )
 
 _VALIDATEUTXOREQUEST.fields_by_name['outpoints'].message_type = _OUTPOINT
@@ -1312,9 +1499,12 @@ _UTXO.fields_by_name['outpoint'].message_type = _OUTPOINT
 _UTXO.fields_by_name['slp_meta'].message_type = _SLPMETA
 _UTXO.fields_by_name['slp_token'].message_type = _SLPTOKEN
 _UTXO.fields_by_name['network'].enum_type = _NETWORK
+_BLOCK.fields_by_name['block_info'].message_type = _BLOCKINFO
+_BLOCK.fields_by_name['txs'].message_type = _TX
 _SCRIPTUTXOS.fields_by_name['utxos'].message_type = _UTXO
 _TXHISTORYPAGE.fields_by_name['txs'].message_type = _TX
 _UTXOS.fields_by_name['script_utxos'].message_type = _SCRIPTUTXOS
+_BLOCKS.fields_by_name['blocks'].message_type = _BLOCKINFO
 _SLPTXDATA.fields_by_name['slp_meta'].message_type = _SLPMETA
 _SLPTXDATA.fields_by_name['genesis_info'].message_type = _SLPGENESISINFO
 _SLPMETA.fields_by_name['token_type'].enum_type = _SLPTOKENTYPE
@@ -1350,9 +1540,12 @@ DESCRIPTOR.message_types_by_name['ValidateUtxoRequest'] = _VALIDATEUTXOREQUEST
 DESCRIPTOR.message_types_by_name['ValidateUtxoResponse'] = _VALIDATEUTXORESPONSE
 DESCRIPTOR.message_types_by_name['Tx'] = _TX
 DESCRIPTOR.message_types_by_name['Utxo'] = _UTXO
+DESCRIPTOR.message_types_by_name['BlockInfo'] = _BLOCKINFO
+DESCRIPTOR.message_types_by_name['Block'] = _BLOCK
 DESCRIPTOR.message_types_by_name['ScriptUtxos'] = _SCRIPTUTXOS
 DESCRIPTOR.message_types_by_name['TxHistoryPage'] = _TXHISTORYPAGE
 DESCRIPTOR.message_types_by_name['Utxos'] = _UTXOS
+DESCRIPTOR.message_types_by_name['Blocks'] = _BLOCKS
 DESCRIPTOR.message_types_by_name['SlpTxData'] = _SLPTXDATA
 DESCRIPTOR.message_types_by_name['SlpMeta'] = _SLPMETA
 DESCRIPTOR.message_types_by_name['TxInput'] = _TXINPUT
@@ -1404,6 +1597,20 @@ Utxo = _reflection.GeneratedProtocolMessageType('Utxo', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Utxo)
 
+BlockInfo = _reflection.GeneratedProtocolMessageType('BlockInfo', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKINFO,
+  '__module__' : 'chronik_pb2'
+  # @@protoc_insertion_point(class_scope:chronik.BlockInfo)
+  })
+_sym_db.RegisterMessage(BlockInfo)
+
+Block = _reflection.GeneratedProtocolMessageType('Block', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCK,
+  '__module__' : 'chronik_pb2'
+  # @@protoc_insertion_point(class_scope:chronik.Block)
+  })
+_sym_db.RegisterMessage(Block)
+
 ScriptUtxos = _reflection.GeneratedProtocolMessageType('ScriptUtxos', (_message.Message,), {
   'DESCRIPTOR' : _SCRIPTUTXOS,
   '__module__' : 'chronik_pb2'
@@ -1424,6 +1631,13 @@ Utxos = _reflection.GeneratedProtocolMessageType('Utxos', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:chronik.Utxos)
   })
 _sym_db.RegisterMessage(Utxos)
+
+Blocks = _reflection.GeneratedProtocolMessageType('Blocks', (_message.Message,), {
+  'DESCRIPTOR' : _BLOCKS,
+  '__module__' : 'chronik_pb2'
+  # @@protoc_insertion_point(class_scope:chronik.Blocks)
+  })
+_sym_db.RegisterMessage(Blocks)
 
 SlpTxData = _reflection.GeneratedProtocolMessageType('SlpTxData', (_message.Message,), {
   'DESCRIPTOR' : _SLPTXDATA,
