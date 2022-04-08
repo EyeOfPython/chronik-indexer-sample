@@ -2,6 +2,8 @@
 
 **NOTE**: It is advised to have at least 20GB of available disk space to allow Chronik to sync properly (disk usage will grow and shrink during sync time)
 
+**NOTE**: Once the database grows to a certain size, you may run into a RocksDB error: `Too many open files`. To solve this, run `ulimit -n 10000` (or a larger number if desired) in order to increase the resource limit for your current shell, then run Chronik again. The `-n` flag for `ulimit` is for the number of open file descriptors.
+
 1. Download and extract latest Lotus: https://storage.googleapis.com/lotus-project/lotus-2.1.3-x86_64-linux-gnu.tar.gz
 2. Add a file named `lotus.conf` to the appropriate datadir with the following contents:
   ```
